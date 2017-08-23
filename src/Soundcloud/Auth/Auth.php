@@ -107,7 +107,7 @@ class Auth implements AuthInterface
     
     public function mergeParams(array $params = array(), $includeClientSecret = false)
     {
-        if ($this->accessToken !== null) {
+        if ($this->accessToken) {
             return array_merge($params, array('oauth_token' => $this->accessToken));
         }
         
